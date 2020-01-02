@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navbar">
-      <router-link to="/home" tag="i" class="iconfont icon-dianpuzhuye"></router-link>
+      <router-link to="/home" tag="i" class="iconfont icon-icon-test40"></router-link>
       <router-link to="/search" tag="i" class="iconfont icon-icon-test12"></router-link>
       <router-link to="/message" tag="i" class="iconfont icon-icon-test22"></router-link>
       <router-link to="/account" tag="i" class="iconfont icon-icon-test35"></router-link>
@@ -45,3 +45,6 @@ export default {
   text-align: center;
 }
 </style>
+// navbar
+// 四个iconfont
+// 一个底线div

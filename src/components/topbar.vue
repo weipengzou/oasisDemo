@@ -54,5 +54,5 @@ export default {
 </style>
 // topbar有两个需要传递的属性
 // 一个titile 设置标题
-// 一个插槽 如果有需要放iconfont
+// 一个插槽 如果有需要可以放iconfont
 //自带一个顶线div

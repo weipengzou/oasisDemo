@@ -1,5 +1,6 @@
 <template>
   <div class="user">
+    <!-- 用户信息 -->
     <div v-if="islogin" class="userContent">
       用户信息
       <span>名字：{{myname}}</span>
@@ -9,6 +10,11 @@
         <input @click="loginOut" type="button" value="退出" />
       </span>
     </div>
+    <!-- 判断是否登录 -->
+    <div>
+      <p>尚未登录</p>
+      <router-link tag="p" to="login" v-if="!islogin">点击登录&注册</router-link>
+    </div>
   </div>
 </template>
 <script>
@@ -16,7 +22,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      islogin: true,
+      islogin: false,
       userlist: [],
       account: "",
       pwd: "",
