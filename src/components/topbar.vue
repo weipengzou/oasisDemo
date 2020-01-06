@@ -6,7 +6,7 @@
         <slot></slot>
       </router-link>
     </div>
-    <div class="topLine">——到顶了——</div>
+    <div class="topLine" v-if="false">——到顶了——</div>
   </div>
 </template>
 <script>

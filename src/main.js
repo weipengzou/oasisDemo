@@ -6,8 +6,8 @@ import store from './store'
 // import './assets/iconfont/icon.css'
 Vue.config.productionTip = false
 import axios from 'axios'
-Vue.use(axios)
-
+// Vue.use(axios)
+Vue.prototype.$ajax = axios
 new Vue({
   router,
   store,

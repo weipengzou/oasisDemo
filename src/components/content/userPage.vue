@@ -1,20 +1,24 @@
 <template>
-  <div class="user">
-    <!-- 用户信息 -->
-    <div v-if="islogin" class="userContent">
-      用户信息
-      <span>名字：{{myname}}</span>
-      <span>年龄：{{myage}}</span>
-      <span>性别：{{mysex}}</span>
-      <span class="btn">
-        <input @click="loginOut" type="button" value="退出" />
-      </span>
-    </div>
-    <!-- 判断是否登录 -->
-    <div>
-      <p>尚未登录</p>
-      <router-link tag="p" to="login" v-if="!islogin">点击登录&注册</router-link>
-    </div>
+  <div>
+    <keep-alive>
+      <div id="user">
+        <!-- 用户信息 -->
+        <div v-show="this.$store.state.isUserPageShow" class="userContent">
+          用户信息
+          <span>名字：{{myname}}</span>
+          <span>年龄：{{myage}}</span>
+          <span>性别：{{mysex}}</span>
+          <span class="btn">
+            <input @click="loginOut" type="button" value="退出" />
+          </span>
+        </div>
+        <!-- 判断是否登录 -->
+        <div v-show="!this.$store.state.isUserPageShow" class="loginDiv">
+          <p>尚未登录</p>
+          <router-link tag="p" to="login">点击登录&注册</router-link>
+        </div>
+      </div>
+    </keep-alive>
   </div>
 </template>
 <script>
@@ -56,22 +60,24 @@ export default {
     },
     loginOut() {
       this.islogin = !this.islogin;
+      
     }
   }
 };
 </script>
 <style lang="scss" scoped>
+#user {
+  width: 100%;
+  height: 100vh;
+}
 * {
   font-size: 0.16rem;
+  background-color: yellowgreen;
   input {
     font-size: 0.18rem;
   }
 }
-.user {
-  width: 100%;
-  height: 5rem;
-  background-color: yellowgreen;
-}
+
 .userContent {
   display: flex;
   flex-direction: column;
@@ -95,5 +101,9 @@ export default {
     width: 1rem;
     flex: 1;
   }
+}
+.loginDiv {
+  padding-top: 50vh;
+  text-align: center;
 }
 </style>

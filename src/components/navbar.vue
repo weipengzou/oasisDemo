@@ -6,7 +6,7 @@
       <router-link to="/message" tag="i" class="iconfont icon-icon-test22"></router-link>
       <router-link to="/account" tag="i" class="iconfont icon-icon-test35"></router-link>
     </div>
-    <div class="bottomLine">——到底了——</div>
+    <div class="bottomLine" v-if="false">——到底了——</div>
   </div>
 </template>
 <script>
